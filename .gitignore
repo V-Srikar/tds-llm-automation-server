@@ -5,4 +5,8 @@ venv/
 .env
 
 # Ignore Python cache files
+<<<<<<< HEAD
 __pycache__/
+=======
+__pycache__/
+>>>>>>> 1f46f9d81eb9ee101ca8f211669cccc0bad2806a
