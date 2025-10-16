@@ -120,7 +120,7 @@ def generate_code_with_llm(brief: str, checks: list, attachments: list, existing
                     print(f"Warning: Could not decode attachment {file_name}. Error: {e}")
             full_prompt += "\n"
         
-        request_options = {"timeout": 120}
+        request_options = {"timeout": 300}
         response = model.generate_content(full_prompt, request_options=request_options)
         
         print("✅ LLM code generation complete.")
