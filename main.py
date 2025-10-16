@@ -17,7 +17,7 @@ from worker import (
 load_dotenv()
 app = FastAPI()
 
-MY_PROJECT_SECRET = os.getenv("MY_PROJEC_SECRET")
+MY_PROJECT_SECRET = os.getenv("MY_PROJECT_SECRET")
 GITHUB_PAT = os.getenv("GITHUB_PAT")
 
 
