@@ -17,7 +17,7 @@ test_payload = {
 
 try:
     print("--- 🚀 RUNNING ROUND 2 (REVISE) TEST ---")
-    response = httpx.post("http://127.0.0.1:8000/handle-task", json=test_payload)
+    response = httpx.post("https://vskr23-srikar-tds-project.hf.space/handle-task", json=test_payload)
     response.raise_for_status()
     print("✅ Success! Server responded with:")
     print(response.json())
