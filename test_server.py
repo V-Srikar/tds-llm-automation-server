@@ -8,7 +8,6 @@ test_payload = {
     "task": "final-build-test", # KEEP THE SAME TASK ID
     "round": 2, # Set to 2 for the revise test
     "nonce": "round-2-nonce-final",
-    # ⬇️ THIS IS THE CORRECT BRIEF FOR THE REVISION
     "brief": "Update the page. Add a new section below the paragraph with a list of the tools used in this project: FastAPI, Google Gemini, and GitHub.",
     "checks": [],
     "evaluation_url": "https://example.com/notify",
@@ -17,10 +16,18 @@ test_payload = {
 
 try:
     print("--- 🚀 RUNNING ROUND 2 (REVISE) TEST ---")
-    response = httpx.post("https://vskr23-project-1-tds.hf.space/handle-task", json=test_payload)
+    
+    # Send the request with a longer timeout to handle cold starts
+    response = httpx.post(
+        "https://tds-llm-automation-server.onrender.com/handle-task", 
+        json=test_payload,
+        timeout=60.0  # <-- ADD THIS LINE
+    )
+    
     response.raise_for_status()
     print("✅ Success! Server responded with:")
     print(response.json())
+    
 except httpx.HTTPStatusError as e:
     print(f"❌ Error! Server responded with status {e.response.status_code}:")
     print(e.response.json())
