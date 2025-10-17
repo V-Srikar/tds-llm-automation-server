@@ -10,7 +10,7 @@ print("--- Starting direct Gemini API test ---")
 
 try:
     # Configure the API key
-    genai.configure(api_key=os.getenv("AIzaSyBv4wWBZ2HW5G3u-eaT7n1ea_95FpVuC5g"))
+    genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
     # Create the model instance
     model = genai.GenerativeModel('gemini-pro-latest')
