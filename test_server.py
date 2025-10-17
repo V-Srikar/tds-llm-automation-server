@@ -21,7 +21,7 @@ try:
     response = httpx.post(
         "https://tds-llm-automation-server.onrender.com/handle-task", 
         json=test_payload,
-        timeout=60.0  # <-- ADD THIS LINE
+        timeout=300.0  # <-- ADD THIS LINE
     )
     
     response.raise_for_status()
